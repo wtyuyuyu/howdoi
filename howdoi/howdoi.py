@@ -14,11 +14,11 @@ import os
 import random
 import re
 import requests
-import requests_cache
+import requests_cache  #发送请求
 import sys
 from . import __version__
 
-from pygments import highlight
+from pygments import highlight                              #高亮
 from pygments.lexers import guess_lexer, get_lexer_by_name
 from pygments.formatters.terminal import TerminalFormatter
 from pygments.util import ClassNotFound

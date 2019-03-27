@@ -304,7 +304,7 @@ def get_parser():
     return parser
 
 
-def command_line_runner():
+def command_line_runner():   #主函数
     parser = get_parser()
     args = vars(parser.parse_args())
 
@@ -335,4 +335,4 @@ def command_line_runner():
 
 
 if __name__ == '__main__':
-    command_line_runner()
+    command_line_runner()   #以脚本形式运行

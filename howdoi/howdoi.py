@@ -8,27 +8,27 @@
 #
 ######################################################
 
-import argparse
+import argparse 
 import glob
 import os
 import random
 import re
 import requests
-import requests_cache                                       #发送请求
+import requests_cache                                     
 import sys
 from . import __version__
 
-from pygments import highlight                              #高亮
+from pygments import highlight                              
 from pygments.lexers import guess_lexer, get_lexer_by_name
 from pygments.formatters.terminal import TerminalFormatter
 from pygments.util import ClassNotFound
 
-from pyquery import PyQuery as pq
+from pyquery import PyQuery as pq   
 from requests.exceptions import ConnectionError
 from requests.exceptions import SSLError
 
-# Handle imports for Python 2 and 3
-if sys.version < '3':                                      #若python版本小于3
+# Handle imports for Python 2 and 3     
+if sys.version < '3':                                      
     import codecs
     from urllib import quote as url_quote
     from urllib import getproxies
@@ -36,15 +36,15 @@ if sys.version < '3':                                      #若python版本小�
     # Handling Unicode: http://stackoverflow.com/a/6633040/305414
     def u(x):
         return codecs.unicode_escape_decode(x)[0]
-else:                                                      #若版本大于3
+else:                                                      
     from urllib.request import getproxies
     from urllib.parse import quote as url_quote
 
-    def u(x):                                              #疑似空函数，和pass类似
+    def u(x):                                              
         return x
 
 
-if os.getenv('HOWDOI_DISABLE_SSL'):  # Set http instead of https
+if os.getenv('HOWDOI_DISABLE_SSL'):  # Set http instead of https   
     SCHEME = 'http://'
     VERIFY_SSL_CERTIFICATE = False
 else:
@@ -304,7 +304,7 @@ def get_parser():
     return parser
 
 
-def command_line_runner():   #主函数
+def command_line_runner():   
     parser = get_parser()
     args = vars(parser.parse_args())
 
@@ -335,4 +335,4 @@ def command_line_runner():   #主函数
 
 
 if __name__ == '__main__':
-    command_line_runner()   #以脚本形式运行
+    command_line_runner()   

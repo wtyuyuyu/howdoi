@@ -14,7 +14,7 @@ import os
 import random
 import re
 import requests
-import requests_cache  #发送请求
+import requests_cache                                       #发送请求
 import sys
 from . import __version__
 
@@ -28,7 +28,7 @@ from requests.exceptions import ConnectionError
 from requests.exceptions import SSLError
 
 # Handle imports for Python 2 and 3
-if sys.version < '3':
+if sys.version < '3':                                      #若python版本小于3
     import codecs
     from urllib import quote as url_quote
     from urllib import getproxies

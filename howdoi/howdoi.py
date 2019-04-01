@@ -36,11 +36,11 @@ if sys.version < '3':                                      #若python版本小�
     # Handling Unicode: http://stackoverflow.com/a/6633040/305414
     def u(x):
         return codecs.unicode_escape_decode(x)[0]
-else:
+else:                                                      #若版本大于3
     from urllib.request import getproxies
     from urllib.parse import quote as url_quote
 
-    def u(x):
+    def u(x):                                              #疑似空函数，和pass类似
         return x
 
 
